@@ -16,8 +16,8 @@ Minimum = 1
 Maximum = 8
 
 Approach
-Assume the first element is both minimum and maximum.
-Traverse the array.
-If an element is smaller than the current minimum, update minimum.
-If an element is larger than the current maximum, update maximum.
-Return both values.
+1.Assume the first element is both minimum and maximum.
+2.Traverse the array.
+3.If an element is smaller than the current minimum, update minimum.
+4.If an element is larger than the current maximum, update maximum.
+5.Return both values.
