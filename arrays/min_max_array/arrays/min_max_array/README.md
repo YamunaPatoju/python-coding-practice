@@ -16,6 +16,7 @@ Minimum = 1
 Maximum = 8
 
 Approach-
+
 1.Assume the first element is both minimum and maximum.
 
 2.Traverse the array.
