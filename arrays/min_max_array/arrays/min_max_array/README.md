@@ -1,4 +1,5 @@
 Minimum and Maximum of an Array
+
 Problem Statement-
 Given an array of integers, find the minimum and maximum elements present in the array.
 Example-
@@ -7,6 +8,7 @@ Input:
 Output:
 Minimum = 1
 Maximum = 8
+
 Approach-
 1.Assume the first element is both minimum and maximum.
 2.Traverse the array.
