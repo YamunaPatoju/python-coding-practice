@@ -1,4 +1,4 @@
-class Solution:
+
     def nextPermutation(self, nums):
         n = len(nums)
 
