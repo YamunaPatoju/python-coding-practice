@@ -20,11 +20,6 @@ Output:
 ```text
 2
 ```
-
-Explanation:
-
-The subarray `[4, 3]` has a sum of 7 and its length is 2.
-
 ## Example 2
 
 Input:
@@ -39,30 +34,6 @@ Output:
 ```text
 1
 ```
-
-Explanation:
-
-The subarray `[4]` itself satisfies the condition.
-
-## Example 3
-
-Input:
-
-```text
-target = 11
-nums = [1, 1, 1, 1, 1, 1, 1, 1]
-```
-
-Output:
-
-```text
-0
-```
-
-Explanation:
-
-No subarray has a sum greater than or equal to 11.
-
 ## Approach
 
 I used the Sliding Window technique.
