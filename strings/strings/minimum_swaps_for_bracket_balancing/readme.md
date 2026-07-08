@@ -2,9 +2,9 @@
 
 ## Problem Statement
 
-Given a string consisting of an equal number of `'['` and `']'` brackets, determine the minimum number of adjacent swaps required to make the string balanced.
+Given a string consisting of an equal number of `'['` and `']'` brackets, find the minimum number of **adjacent swaps** required to make the string balanced.
 
-A balanced string satisfies proper opening and closing bracket order.
+A balanced string is one in which every opening bracket has a matching closing bracket in the correct order.
 
 ---
 
@@ -24,7 +24,15 @@ A balanced string satisfies proper opening and closing bracket order.
 
 **Explanation**
 
-Two adjacent swaps are sufficient to balance the brackets.
+```text
+[]][][
+   ↑ swap
+[][]][
+     ↑ swap
+[][][]
+```
+
+Total swaps = **2**
 
 ---
 
@@ -60,21 +68,22 @@ The string is already balanced.
 0
 ```
 
+Already balanced.
+
 ---
 
 ## Approach
 
-- Traverse the string from left to right.
-- Maintain:
-  - `open_brackets` = number of unmatched `'['`
-  - `imbalance` = number of unmatched `']'`
-- When `'['` is encountered:
-  - Increase `open_brackets`.
-  - If there is an imbalance, swap it with a previous unmatched `']'`.
-- When `']'` is encountered:
-  - Match it with an available `'['` if possible.
-  - Otherwise, increase the imbalance.
-- The accumulated swaps give the minimum adjacent swaps required.
+- Store the indices of every `'['` in an array.
+- Traverse the string while maintaining the current balance:
+  - `'['` increases the balance.
+  - `']'` decreases the balance.
+- Whenever the balance becomes negative:
+  - Swap the current `']'` with the next available `'['`.
+  - Add the distance between them to the answer.
+  - Restore the balance.
+
+This guarantees the minimum number of adjacent swaps.
 
 ---
 
