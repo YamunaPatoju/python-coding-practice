@@ -1,22 +1,32 @@
 class Solution:
-    def minSwaps(self, s):
+    def minimumNumberOfSwaps(self, s):
 
-        imbalance = 0
-        open_brackets = 0
+        pos = []
+
+        for i in range(len(s)):
+            if s[i] == '[':
+                pos.append(i)
+
+        s = list(s)
+
+        p = 0
+        count = 0
         swaps = 0
 
-        for ch in s:
+        for i in range(len(s)):
 
-            if ch == '[':
-                open_brackets += 1
-
-                if imbalance > 0:
-                    swaps += imbalance
-                    imbalance -= 1
+            if s[i] == '[':
+                count += 1
+                p += 1
             else:
-                if open_brackets > 0:
-                    open_brackets -= 1
-                else:
-                    imbalance += 1
+                count -= 1
+
+            if count < 0:
+                swaps += pos[p] - i
+
+                s[i], s[pos[p]] = s[pos[p]], s[i]
+
+                p += 1
+                count = 1
 
         return swaps
